@@ -13,6 +13,13 @@
   padding: 5px 5px 5px 25px;
 }
 
+#post h3 {
+  font-size: 4em;
+}
+a:hover {
+  text-decoration: none;
+}
+
 .devise-new {
   text-align: center;
 }
