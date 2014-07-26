@@ -1,14 +1,33 @@
 <div id="posts">
+<!-- Displaying Featured Post -->
+  <div id="featured-post">
+<% @post = Post.last %>
+<h3><%= link_to @post.title, @post %></h3>
+<p><%= @post.body %></p>
+<% if user_signed_in? %>
+    <small>
+      <%= link_to 'Edit', edit_post_path(@post) %> |
+      <%= link_to 'Destroy', @post, method: :delete %>
+    </small>
+<% end %>    
+  </div>
+
+<% n = 0 %>
+<!-- Displaying Post Archive (Number value is iterated with posts) -->
   <% @posts.each do |post| %>
   <div id="post">
-    <h3><%= link_to post.title, post %></h3>
-    <%= simple_format post.body %>
+    <h3><small><%= n %>.</small><%= link_to post.title, post %></h3>
+    <% if user_signed_in? %>
     <small>
       <%= link_to 'Edit', edit_post_path(post) %> |
       <%= link_to 'Destroy', post, method: :delete %>
     </small>
+    <% end %>
   </div>
+  <% n+=1 %>
   <% end %>
-</div>
+<% if user_signed_in? %>
+<%= link_to 'New Post', new_post_path %>
+<% end %>   
 
-<%= link_to 'New Post', new_post_path %>     
+</div  
