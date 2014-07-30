@@ -1,8 +1,12 @@
 /*!
  * Start Bootstrap - Grayscale Bootstrap Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
+ * Code licensed under the Apache License v2 8.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+/* Custom Additions by Ian Tracey 7/29/2014 */
+#featured-post-title {
+    font-color: red;
+} 
 
 body {
     width: 100%;
@@ -154,6 +158,7 @@ a:focus {
 
 .intro .intro-body .brand-heading {
     font-size: 40px;
+    padding-top: 70px;
 }
 
 .intro .intro-body .intro-text {
